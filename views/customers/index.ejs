@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haloo guys</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <h1>Data Customer</h1>
+    <% if(message !="" ) { %>
+        <div class="alert">Data berhasil <%= message %>
+        </div>
+        <% } %>
+            <table border="1px solid black" cellspacing="0" cellpadding="10">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>City</th>
+                        <th>Email</th>
+                        <th>Created At</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% customers.map((customer)=> { %>
+                        <tr>
+                            <td>
+                                <%= customer.id %>
+                            </td>
+                            <td>
+                                <%= customer.name %>
+                            </td>
+                            <td>
+                                <%= customer.age %>
+                            </td>
+                            <td>
+                                <%= customer.city %>
+                            </td>
+                            <td>
+                                <%= customer.email %>
+                            </td>
+                            <td>
+                                <%= customer.createdAt %>
+                            </td>
+                            <td>
+                                <a href="/customers/edit/<%= customer.id %>">
+                                    <button>Edit</button>
+                                </a>
+
+                                <form action="/customers/admin/delete/<%= customer.id %>" method="post">
+                                    <button>Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+            <a href="/customers/create">Tambah Data Baru</a>
+</body>
+
+</html>

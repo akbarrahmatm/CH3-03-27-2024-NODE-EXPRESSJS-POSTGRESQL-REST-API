@@ -1,0 +1,6 @@
+- database mongodb atau sql boleh
+- view engine di implementasi tampilan sesuai figma
+- design pattern MVC
+- notif (data berhasil masuk), filter(search dan capacity kendaraan) dan upload image 
+- CRUD di API (res.status(200).json({})
+- CRUD di View Engine (res.render('index.ejs) / res.redirect)
